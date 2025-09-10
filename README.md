@@ -1,4 +1,4 @@
-# 📝 TODO 
+# 📝 TODO LIST
 
 ## Project Name: Revelry 
 
@@ -18,6 +18,9 @@
 - [ ] **Configure utils for my project:** Migrate the utils from the youtube project to mine
 
 
+- [ ] **Configure state for my project:** Migrate the state from the youtube project to mine
 
----
+
+- [ ] **Configure types for my project:** Migrate the types from the youtube project to mine
+
 
