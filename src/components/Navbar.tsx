@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
-import { Home, Sprout } from "lucide-react";
+import { Home, LogIn, Martini } from "lucide-react";
+import { UserButton } from "@stackframe/stack";
 
 const Navbar = () => {
   return (
@@ -20,7 +21,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="ghost" className="flex items-center gap-2" asChild>
               <Link href="/places">
-                <Sprout className="w-4 h-4" />
+                <Martini className="w-4 h-4" />
                 <span className="hidden lg:inline">Places</span>
               </Link>
             </Button>
@@ -30,6 +31,19 @@ const Navbar = () => {
                 <span className="hidden lg:inline">Home</span>
               </Link>
             </Button>
+            {/* <Button variant="ghost" className="flex items-center gap-2" asChild>
+              <Link href="/handler/sign-in">
+                <LogIn className="w-4 h-4" />
+                <span className="hidden lg:inline">Sign in</span>
+              </Link>
+            </Button>
+            <Button variant="ghost" className="flex items-center gap-2" asChild>
+              <Link href="/handler/sign-up">
+                <LogIn className="w-4 h-4" />
+                <span className="hidden lg:inline">Sign up</span>
+              </Link>
+            </Button> */}
+            <UserButton/>
           </div>
         </div>
       </div>
