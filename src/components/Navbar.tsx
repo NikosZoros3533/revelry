@@ -14,7 +14,7 @@ const Navbar = async () => {
   console.log(userProfile?.name);
 
   return (
-    <nav className="sticky top-0 w-full bg-primary backdrop-blur supports-[backdrop-filter]:bg-primary/60 z-50">
+    <nav className="sticky top-6 inset-x-4 h-16 bg-primary mb-8 backdrop-blur supports-[backdrop-filter]:bg-primary/60 z-50  max-w-(--breakpoint-xl) mx-auto rounded-full">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16 ">
           <div className="flex items-center">
@@ -50,6 +50,31 @@ const Navbar = async () => {
                 <Link href={app.signIn}>
                   <LogIn className="w-4 h-4" />
                   <span className="hidden lg:inline">Log in</span>
+                </Link>
+              </Button>
+            )}
+          </div>
+          <div className="flex items-center space-x-4 md:hidden">
+            <Button variant="ghost" className="flex items-center gap-2" asChild>
+              <Link href="/places">
+                <Martini className="w-4 h-4" />
+              </Link>
+            </Button>
+            <Button variant="ghost" className="flex items-center gap-2" asChild>
+              <Link href="/">
+                <Home className="w-4 h-4" />
+              </Link>
+            </Button>
+            {user ? (
+              <UserButton />
+            ) : (
+              <Button
+                variant="ghost"
+                className="flex items-center gap-2"
+                asChild
+              >
+                <Link href={app.signIn}>
+                  <LogIn className="w-4 h-4" />
                 </Link>
               </Button>
             )}
