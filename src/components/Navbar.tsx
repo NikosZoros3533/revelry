@@ -53,18 +53,6 @@ const Navbar = async () => {
                 </Link>
               </Button>
             )}
-            {/* <Button variant="ghost" className="flex items-center gap-2" asChild>
-              <Link href="/handler/sign-in">
-                <LogIn className="w-4 h-4" />
-                <span className="hidden lg:inline">Sign in</span>
-              </Link>
-            </Button>
-            <Button variant="ghost" className="flex items-center gap-2" asChild>
-              <Link href="/handler/sign-up">
-                <LogIn className="w-4 h-4" />
-                <span className="hidden lg:inline">Sign up</span>
-              </Link>
-            </Button> */}
           </div>
         </div>
       </div>
