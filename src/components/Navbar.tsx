@@ -2,9 +2,17 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
 import { Home, LogIn, Martini } from "lucide-react";
+import { stackServerApp } from "@/stack/server";
+import { getUserDetails } from "@/lib/actions";
 import { UserButton } from "@stackframe/stack";
 
-const Navbar = () => {
+const Navbar = async () => {
+  const user = await stackServerApp.getUser();
+  const app = stackServerApp.urls;
+  const userProfile = await getUserDetails(user?.id);
+
+  console.log(userProfile?.name);
+
   return (
     <nav className="sticky top-0 w-full bg-primary backdrop-blur supports-[backdrop-filter]:bg-primary/60 z-50">
       <div className="max-w-7xl mx-auto px-4">
@@ -31,6 +39,20 @@ const Navbar = () => {
                 <span className="hidden lg:inline">Home</span>
               </Link>
             </Button>
+            {user ? (
+              <UserButton />
+            ) : (
+              <Button
+                variant="ghost"
+                className="flex items-center gap-2"
+                asChild
+              >
+                <Link href={app.signIn}>
+                  <LogIn className="w-4 h-4" />
+                  <span className="hidden lg:inline">Log in</span>
+                </Link>
+              </Button>
+            )}
             {/* <Button variant="ghost" className="flex items-center gap-2" asChild>
               <Link href="/handler/sign-in">
                 <LogIn className="w-4 h-4" />
@@ -43,7 +65,6 @@ const Navbar = () => {
                 <span className="hidden lg:inline">Sign up</span>
               </Link>
             </Button> */}
-            <UserButton/>
           </div>
         </div>
       </div>
